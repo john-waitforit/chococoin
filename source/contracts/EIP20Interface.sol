@@ -2,8 +2,27 @@
 // https://github.com/ethereum/EIPs/blob/master/EIPS/eip-20.md
 pragma solidity >=0.4.25 <0.6.0;
 
+contract owned {
+    constructor() public { owner = msg.sender; }
+    address payable owner;
 
-contract EIP20Interface {
+    // This contract only defines a modifier but does not use
+    // it: it will be used in derived contracts.
+    // The function body is inserted where the special symbol
+    // `_;` in the definition of a modifier appears.
+    // This means that if the owner calls this function, the
+    // function is executed and otherwise, an exception is
+    // thrown.
+    modifier onlyOwner {
+        require(
+            msg.sender == owner,
+            "Only owner can call this function."
+        );
+        _;
+    }
+}
+
+contract EIP20Interface is owned{
     /* This is a slight change to the ERC20 base standard.
     function totalSupply() constant returns (uint256 supply);
     is replaced with:
