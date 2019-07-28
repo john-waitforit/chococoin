@@ -16,7 +16,7 @@ matrix:
 install: true
 
 before_script:
-  - npm install truffle truffle-hdwallet-provider
+  - npm install -g truffle truffle-hdwallet-provider
 
 script:
   # build and deploy ethereum contracts
