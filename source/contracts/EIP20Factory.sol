@@ -37,7 +37,7 @@ contract EIP20Factory {
         public
     returns (address) {
 
-        EIP20 newToken = (new EIP20(_initialAmount, _name, _decimals, _symbol));
+        Choco newToken = (new Choco(_initialAmount, _name, _decimals, _symbol));
         created[msg.sender].push(address(newToken));
         isEIP20[address(newToken)] = true;
         //the factory will own the created tokens. You must transfer them.
