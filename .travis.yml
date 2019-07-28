@@ -16,7 +16,7 @@ matrix:
 install: true
 
 before_script:
-  - npm install truffle-hdwallet-provider
+  - npm install truffle truffle-hdwallet-provider
   - truffle console --network rinkeby
 
 script:
