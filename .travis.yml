@@ -1,0 +1,33 @@
+language: node_js
+node_js: '11'
+
+sudo: false
+
+dist: xenial
+
+cache:
+  npm: true
+  directories:
+    - $HOME/.ethereum/
+
+matrix:
+  fast_finish: true
+  
+install: true
+
+before_script:
+  - npm install truffle-hdwallet-provider
+  - truffle console --network rinkeby
+
+script:
+  # build and deploy ethereum contracts
+  - cd source/
+  - truffle compile
+  - truffle deploy --network rinkeby
+
+git:
+  depth: 3
+  submodules: false
+
+notifications:
+  email: false
