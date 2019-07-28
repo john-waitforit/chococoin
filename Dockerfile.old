@@ -1,0 +1,9 @@
+FROM node
+#COPY . /home/node/MetaCoin
+RUN npm install -g truffle
+RUN truffle init
+#bit of debug
+RUN truffle version
+#todo: put some sol files in our dir/docker!
+#compile sol
+RUN truffle compile
