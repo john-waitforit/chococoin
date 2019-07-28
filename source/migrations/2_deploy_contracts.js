@@ -1,5 +1,5 @@
-const MetaCoin = artifacts.require("MetaCoin");
+const ChocoCoin = artifacts.require("Choco");
 
 module.exports = function(deployer) {
-  deployer.deploy(MetaCoin);
+  deployer.deploy(ChocoCoin);
 };
