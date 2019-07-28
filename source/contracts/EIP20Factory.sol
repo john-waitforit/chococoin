@@ -11,7 +11,7 @@ contract EIP20Factory {
 
     constructor () public {
         //upon creation of the factory, deploy a EIP20 (parameters are meaningless) and store the bytecode provably.
-        address verifiedToken = createEIP20(10000, "Verify Token", 3, "VTX");
+        address verifiedToken = createEIP20(1000000, "Choco Coin", 6, "ChC");
         EIP20ByteCode = codeAt(verifiedToken);
     }
 
